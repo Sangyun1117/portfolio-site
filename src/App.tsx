@@ -27,6 +27,7 @@ function App() {
       </div>
       <p className="read-the-docs">
         안녕하세요
+        새로운 코드 추가
       </p>
     </>
   )
