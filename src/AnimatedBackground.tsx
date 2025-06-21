@@ -4,7 +4,10 @@ type AnimatedBackgroundProps = {
   style?: React.CSSProperties;
   children?: React.ReactNode;
 };
-const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({ style, children }) => {
+const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
+  style,
+  children,
+}) => {
   const [hues, setHues] = useState<number[]>([190, 198, 186, 39, 62, 148, 189]);
 
   useEffect(() => {
@@ -16,7 +19,7 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({ style, children
           return newHue > 360 ? newHue - 360 : newHue;
         })
       );
-    }, 100); // 약 100ms 간격으로 변경하면 5초에 50번 = 부드러운 애니메이션
+    }, 60); // 약 60ms 간격으로 변경하면 5초에 50번 = 부드러운 애니메이션
     return () => clearInterval(interval);
   }, []);
 
@@ -30,7 +33,8 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({ style, children
     radial-gradient(at 78% 22%, hsla(${hues[4]}, 75%, 74%, 1) 0px, transparent 50%),
     radial-gradient(at 40% 10%, hsla(${hues[5]}, 94%, 78%, 1) 0px, transparent 50%),
     radial-gradient(at 75% 16%, hsla(${hues[6]}, 61%, 68%, 1) 0px, transparent 50%)`,
-    height: "50rem",
+    paddingTop: "10rem",
+    paddingBottom: "10rem",
     width: "100%",
     ...style,
   };

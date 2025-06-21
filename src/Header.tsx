@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./css/Header.css";
-import { ArrowUp } from "lucide-react";
+import ArrowUpwardSharpIcon from '@mui/icons-material/ArrowUpwardSharp';
 
 const Header: React.FC = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -19,8 +19,16 @@ const Header: React.FC = () => {
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
+    const header = document.querySelector(".header");
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const headerHeight = header ? header.getBoundingClientRect().height : 0;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - headerHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
     }
   };
 
@@ -33,14 +41,20 @@ const Header: React.FC = () => {
       <header className="header">
         <div className="header-container">
           <div className="logo" onClick={scrollToTop}>
-            Sanyun's Portfolio
+            Sangyun's Portfolio
           </div>
           <nav className="nav">
             <button
               className="nav-btn"
               onClick={() => scrollToSection("about")}
             >
-              About
+              About Me
+            </button>
+            <button
+              className="nav-btn"
+              onClick={() => scrollToSection("stack")}
+            >
+              Tech Stack
             </button>
             <button
               className="nav-btn"
@@ -48,19 +62,13 @@ const Header: React.FC = () => {
             >
               Projects
             </button>
-            <button
-              className="nav-btn"
-              onClick={() => scrollToSection("contact")}
-            >
-              Contact
-            </button>
           </nav>
         </div>
       </header>
 
       {showScrollTop && (
         <button className="scroll-top-btn" onClick={scrollToTop}>
-          <ArrowUp size={20} />
+          <ArrowUpwardSharpIcon style={{ fontSize: 20, color:"white" }} />
         </button>
       )}
     </>
