@@ -33,9 +33,12 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
     radial-gradient(at 78% 22%, hsla(${hues[4]}, 75%, 74%, 1) 0px, transparent 50%),
     radial-gradient(at 40% 10%, hsla(${hues[5]}, 94%, 78%, 1) 0px, transparent 50%),
     radial-gradient(at 75% 16%, hsla(${hues[6]}, 61%, 68%, 1) 0px, transparent 50%)`,
-    paddingTop: "10rem",
-    paddingBottom: "10rem",
     width: "100%",
+    minHeight: "calc(100vh - 6rem)",
+    display:"flex",
+    flexDirection:"column" as const,
+    justifyContent:"center",
+    alignItems:"center",
     ...style,
   };
 

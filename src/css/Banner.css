@@ -1,0 +1,17 @@
+.banner{
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 720px;
+  height: 405px;
+  transition: transform 0.3s ease, outline 0.3s ease;
+}
+.banner:hover {
+  outline: 3px solid #003366; /* 윤곽선 */
+  transform: scale(1.03); /* 살짝 커짐 */
+  cursor: pointer;
+}
+.banner.home_travel {
+  /*홈트래블*/
+  background-image: url('../img/home_travel_banner.png');
+}
+

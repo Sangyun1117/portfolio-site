@@ -1,4 +1,5 @@
 import "./css/App.css";
+import "./css/Banner.css";
 import Header from "./Header";
 import AnimatedBackground from "./AnimatedBackground";
 import { useEffect, useRef, useState } from "react";
@@ -8,6 +9,7 @@ import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import RoomIcon from "@mui/icons-material/Room";
 import EmailIcon from "@mui/icons-material/Email";
 import SchoolIcon from "@mui/icons-material/School";
+import Banner from "./Banner";
 function App() {
   const [showRight, setShowRight] = useState(false);
   const [aboutInView, setAboutInView] = useState(true);
@@ -204,22 +206,17 @@ function App() {
         <span>Backend: FireBase</span>
         <span>Game Engine : Unity(2D)</span>
       </div>
-      <div
-        id="projects"
-        className="container"
-        style={{
-          backgroundColor: "yellow",
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
-        <div className="big-text" style={{ color: "white" }}>
+      <div id="projects" style={{display:'flex', flexDirection:"column"}}>
+        <div className="big-text" style={{ color: "black", marginBottom:"20px" }}>
           Projects
         </div>
-        <span>여행플래너 웹 사이트</span>
-        <span>한국사 교육 웹 사이트</span>
-        <span>한국사 교육 모바일 앱(Android/ios)</span>
-        <span>데일리퀘스트 모바일 앱(Android)</span>
+        <div className="project-container">
+          <Banner className="banner home_travel"></Banner>
+          <Banner className="banner home_travel"></Banner>
+          <Banner className="banner home_travel"></Banner>
+          <Banner className="banner home_travel"></Banner>
+          <Banner className="banner home_travel"></Banner>
+        </div>
       </div>
       <div className="container" style={{ backgroundColor: "green" }}></div>
       <div className="container" style={{ backgroundColor: "blue" }}></div>
