@@ -68,12 +68,12 @@ function App() {
           <div
             style={{
               width: "100%",
-              background: "linear-gradient(to bottom, black, yellow)",
-              color: "white",
               padding: "2rem",
             }}
           >
-            <div className="main-text">About Me</div>
+            <div className="big-text" style={{ color: "black" }}>
+              About Me
+            </div>
             {!showRight && (
               <button
                 onClick={() => setShowRight(true)}
@@ -86,15 +86,9 @@ function App() {
 
           {/* 오른쪽 영역 (애니메이션 등장) */}
           <div
+            className="about-hidden-container"
             style={{
               width: showRight ? "160%" : "0%",
-              background: "yellow",
-              transition: "width 1s ease",
-              overflow: "hidden",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
             }}
           >
             <div
@@ -112,7 +106,8 @@ function App() {
                     <AccountCircleIcon style={{ fontSize: 160 }} />
                   </div>
                   <div className="card-back" style={{ backgroundColor: "red" }}>
-                    <div>About Me</div>
+                    <div>Name</div>
+                    <span>이상윤</span>
                   </div>
                 </div>
               </div>
@@ -125,7 +120,8 @@ function App() {
                     <CalendarMonthSharpIcon style={{ fontSize: 160 }} />
                   </div>
                   <div className="card-back" style={{ backgroundColor: "red" }}>
-                    <div>About Me</div>
+                    <div>생년월일</div>
+                    <span>2000.11.17</span>
                   </div>
                 </div>
               </div>
@@ -138,7 +134,8 @@ function App() {
                     <PhoneAndroidIcon style={{ fontSize: 160 }} />
                   </div>
                   <div className="card-back" style={{ backgroundColor: "red" }}>
-                    <div>About Me</div>
+                    <div>전화번호</div>
+                    <span>010-4057-5165</span>
                   </div>
                 </div>
               </div>
@@ -153,7 +150,8 @@ function App() {
                     <RoomIcon style={{ fontSize: 160 }} />
                   </div>
                   <div className="card-back" style={{ backgroundColor: "red" }}>
-                    <div>About Me</div>
+                    <div>지역</div>
+                    <span>경기도 광명시</span>
                   </div>
                 </div>
               </div>
@@ -166,7 +164,8 @@ function App() {
                     <EmailIcon style={{ fontSize: 160 }} />
                   </div>
                   <div className="card-back" style={{ backgroundColor: "red" }}>
-                    <div>About Me</div>
+                    <div>이메일</div>
+                    <span>son5165@naver.com</span>
                   </div>
                 </div>
               </div>
@@ -179,7 +178,8 @@ function App() {
                     <SchoolIcon style={{ fontSize: 160 }} />
                   </div>
                   <div className="card-back" style={{ backgroundColor: "red" }}>
-                    <div>About Me</div>
+                    <div>학력</div>
+                    <span>한성대학교 웹공학트랙 졸업</span>
                   </div>
                 </div>
               </div>
@@ -190,20 +190,36 @@ function App() {
       <div
         id="stack"
         className="container"
-        style={{ backgroundColor: "orange" }}
+        style={{
+          backgroundColor: "orange",
+          display: "flex",
+          flexDirection: "column",
+        }}
       >
-        <div className="main-text" style={{ color: "white" }}>
+        <div className="big-text" style={{ color: "black" }}>
           Tech Stack
         </div>
+        <span>language: Java, Java Script, TypeScript, Kotlin, C# </span>
+        <span>Frontend: React, HTML, CSS</span>
+        <span>Backend: FireBase</span>
+        <span>Game Engine : Unity(2D)</span>
       </div>
       <div
         id="projects"
         className="container"
-        style={{ backgroundColor: "yellow" }}
+        style={{
+          backgroundColor: "yellow",
+          display: "flex",
+          flexDirection: "column",
+        }}
       >
-        <div className="main-text" style={{ color: "white" }}>
+        <div className="big-text" style={{ color: "white" }}>
           Projects
         </div>
+        <span>여행플래너 웹 사이트</span>
+        <span>한국사 교육 웹 사이트</span>
+        <span>한국사 교육 모바일 앱(Android/ios)</span>
+        <span>데일리퀘스트 모바일 앱(Android)</span>
       </div>
       <div className="container" style={{ backgroundColor: "green" }}></div>
       <div className="container" style={{ backgroundColor: "blue" }}></div>
