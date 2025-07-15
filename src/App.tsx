@@ -10,10 +10,14 @@ import RoomIcon from "@mui/icons-material/Room";
 import EmailIcon from "@mui/icons-material/Email";
 import SchoolIcon from "@mui/icons-material/School";
 import Banner from "./Banner";
+import { HomeTravelModal } from "./modal";
+
 function App() {
   const [showRight, setShowRight] = useState(false);
   const [aboutInView, setAboutInView] = useState(true);
   const aboutRef = useRef<HTMLDivElement>(null);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // 관찰자 설정
   useEffect(() => {
@@ -45,7 +49,8 @@ function App() {
   return (
     <div>
       <Header />
-      <AnimatedBackground style={{ marginTop: "6rem" }}>
+      <div style={{ height: "6rem", backgroundColor: "black" }}></div>
+      <AnimatedBackground>
         <div className="main-text" style={{ marginRight: "30%" }}>
           Frontend Developer
         </div>
@@ -206,12 +211,18 @@ function App() {
         <span>Backend: FireBase</span>
         <span>Game Engine : Unity(2D)</span>
       </div>
-      <div id="projects" style={{display:'flex', flexDirection:"column"}}>
-        <div className="big-text" style={{ color: "black", marginBottom:"20px" }}>
+      <div id="projects" style={{ display: "flex", flexDirection: "column" }}>
+        <div
+          className="big-text"
+          style={{ color: "black", marginBottom: "20px" }}
+        >
           Projects
         </div>
         <div className="project-container">
-          <Banner className="banner home_travel"></Banner>
+          <Banner
+            className="banner home_travel"
+            onClick={() => setIsModalOpen(true)}
+          ></Banner>
           <Banner className="banner home_travel"></Banner>
           <Banner className="banner home_travel"></Banner>
           <Banner className="banner home_travel"></Banner>
@@ -220,6 +231,10 @@ function App() {
       </div>
       <div className="container" style={{ backgroundColor: "green" }}></div>
       <div className="container" style={{ backgroundColor: "blue" }}></div>
+      <HomeTravelModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 }
