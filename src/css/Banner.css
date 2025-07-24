@@ -1,8 +1,7 @@
 .banner{
   background-size: contain;
   background-repeat: no-repeat;
-  width: 720px;
-  height: 405px;
+
   transition: transform 0.3s ease, outline 0.3s ease;
 }
 .banner:hover {
@@ -10,8 +9,12 @@
   transform: scale(1.03); /* 살짝 커짐 */
   cursor: pointer;
 }
-.banner.home_travel {
+.banner.home_travel>.imgdiv {
   /*홈트래블*/
+  width: 360px;
+  height: 225px;
+  background-size: cover;
+  background-position: center;
   background-image: url('/img/home_travel_banner.png');
 }
 

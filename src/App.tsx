@@ -63,7 +63,7 @@ function App() {
         <div className="main-text" style={{ marginLeft: "15%" }}>
           Improving Everyday
         </div>
-      </AnimatedBackground>
+
       <div
         ref={aboutRef}
         id="about"
@@ -79,6 +79,7 @@ function App() {
             }}
           >
             <div className="big-text" style={{ color: "black" }}>
+              <hr />
               About Me
             </div>
             {!showRight && (
@@ -198,7 +199,6 @@ function App() {
         id="stack"
         className="container"
         style={{
-          backgroundColor: "orange",
           display: "flex",
           flexDirection: "column",
         }}
@@ -222,19 +222,36 @@ function App() {
           <Banner
             className="banner home_travel"
             onClick={() => setIsModalOpen(true)}
-          ></Banner>
+          >방구석 국내 여행</Banner>
           <Banner className="banner home_travel"></Banner>
           <Banner className="banner home_travel"></Banner>
           <Banner className="banner home_travel"></Banner>
           <Banner className="banner home_travel"></Banner>
         </div>
       </div>
-      <div className="container" style={{ backgroundColor: "green" }}></div>
-      <div className="container" style={{ backgroundColor: "blue" }}></div>
+      <div className="container">
+                <div
+          className="big-text"
+          style={{ color: "black", marginBottom: "20px" }}
+        >
+          <hr />
+          A1
+        </div>
+      </div>
+      <div className="container">
+                <div
+          className="big-text"
+          style={{ color: "black", marginBottom: "20px" }}
+        >
+          <hr />
+          A2
+        </div>
+      </div>
       <HomeTravelModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
+            </AnimatedBackground>
     </div>
   );
 }

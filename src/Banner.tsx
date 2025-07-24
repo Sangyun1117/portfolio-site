@@ -11,8 +11,13 @@ const Banner: React.FC<BannerProps> = ({
 }) => {
   return (
     <div className={className} onClick={onClick}>
-      {children}
+      <div className="imgdiv">  
+      </div>
+      <div style={{backgroundColor:"gray"}}>
+        {children}
+      </div>
     </div>
+
   );
 };
 
