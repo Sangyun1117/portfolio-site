@@ -128,7 +128,7 @@ function HomeTravelModal({ isOpen, onClose }: MyModalProps) {
           </ul>
         </Accordion>
         <a
-          href="https://github.com/your-id/your-project"
+          href="https://github.com/Sangyun1117/HomeTravel_Front.git"
           target="_blank"
           rel="noopener noreferrer"
           style={{
